@@ -61,10 +61,14 @@ public final class Unidecode {
 						"me.xuender.unidecode.X%03x", section));
 				Field f = c.getDeclaredField("data");
 				ret = (String[]) f.get(null);
-			} catch (Exception e) {
+				cache[section] = ret;
+			} catch (ClassNotFoundException e) {
 				// No match: ignore this character and carry on.
+				cache[section] = new String[] {};
+			} catch (Exception e) {
 			}
-			cache[section] = ret;
+		} else if (ret.length == 0) {
+			return null;
 		}
 		return ret;
 	}
