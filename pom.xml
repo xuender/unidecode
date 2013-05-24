@@ -4,6 +4,7 @@
 	<groupId>me.xuender</groupId>
 	<artifactId>unidecode</artifactId>
 	<version>0.0.1</version>
+	<packaging>jar</packaging>
 	<description>ASCII transliterations of Unicode text for Java</description>
 	<developers>
 		<developer>
@@ -14,6 +15,14 @@
 			<organizationUrl>http://xuender.me</organizationUrl>
 		</developer>
 	</developers>
+	<issueManagement>
+		<system>Github Issue</system>
+		<url>https://github.com/xuender/unidecode/issues</url>
+	</issueManagement>
+	<scm>
+		<connection>git@github.com/xuender/unidecode</connection>
+		<url>https://github.com/xuender/unidecode</url>
+	</scm>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>

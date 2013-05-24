@@ -1,6 +1,6 @@
 # Unidecode #
 
-ASCII transliterations of Unicode text for Java
+ASCII transliterations of Unicode text for Java.
 
 ## Reference ##
 
@@ -8,7 +8,7 @@ ASCII transliterations of Unicode text for Java
 
 ## How to Use ##
 
-Edit pom.xml
+Edit pom.xml.
 
 ```xml
 <dependency>
