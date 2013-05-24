@@ -8,39 +8,38 @@ package me.xuender.unidecode;
  * 
  */
 class X000 {
-	static final String[] data = new String[] {
-			new String(new char[] { (char) 0x00 }), // 0x00
-			new String(new char[] { (char) 0x01 }), // 0x01
-			new String(new char[] { (char) 0x02 }), // 0x02
-			new String(new char[] { (char) 0x03 }), // 0x03
-			new String(new char[] { (char) 0x04 }), // 0x04
-			new String(new char[] { (char) 0x05 }), // 0x05
-			new String(new char[] { (char) 0x06 }), // 0x06
-			new String(new char[] { (char) 0x07 }), // 0x07
-			new String(new char[] { (char) 0x08 }), // 0x08
-			new String(new char[] { (char) 0x09 }), // 0x09
-			new String(new char[] { (char) 0x0a }), // 0x0a
-			new String(new char[] { (char) 0x0b }), // 0x0b
-			new String(new char[] { (char) 0x0c }), // 0x0c
-			new String(new char[] { (char) 0x0d }), // 0x0d
-			new String(new char[] { (char) 0x0e }), // 0x0e
-			new String(new char[] { (char) 0x0f }), // 0x0f
-			new String(new char[] { (char) 0x10 }), // 0x10
-			new String(new char[] { (char) 0x11 }), // 0x11
-			new String(new char[] { (char) 0x12 }), // 0x12
-			new String(new char[] { (char) 0x13 }), // 0x13
-			new String(new char[] { (char) 0x14 }), // 0x14
-			new String(new char[] { (char) 0x15 }), // 0x15
-			new String(new char[] { (char) 0x16 }), // 0x16
-			new String(new char[] { (char) 0x17 }), // 0x17
-			new String(new char[] { (char) 0x18 }), // 0x18
-			new String(new char[] { (char) 0x19 }), // 0x19
-			new String(new char[] { (char) 0x1a }), // 0x1a
-			new String(new char[] { (char) 0x1b }), // 0x1b
-			new String(new char[] { (char) 0x1c }), // 0x1c
-			new String(new char[] { (char) 0x1d }), // 0x1d
-			new String(new char[] { (char) 0x1e }), // 0x1e
-			new String(new char[] { (char) 0x1f }), // 0x1f
+	static final String[] data = new String[] { "\\x00", // 0x00
+			"\\x01", // 0x01
+			"\\x02", // 0x02
+			"\\x03", // 0x03
+			"\\x04", // 0x04
+			"\\x05", // 0x05
+			"\\x06", // 0x06
+			"\\x07", // 0x07
+			"\\x08", // 0x08
+			"\\x09", // 0x09
+			"\\x0a", // 0x0a
+			"\\x0b", // 0x0b
+			"\\x0c", // 0x0c
+			"\\x0d", // 0x0d
+			"\\x0e", // 0x0e
+			"\\x0f", // 0x0f
+			"\\x10", // 0x10
+			"\\x11", // 0x11
+			"\\x12", // 0x12
+			"\\x13", // 0x13
+			"\\x14", // 0x14
+			"\\x15", // 0x15
+			"\\x16", // 0x16
+			"\\x17", // 0x17
+			"\\x18", // 0x18
+			"\\x19", // 0x19
+			"\\x1a", // 0x1a
+			"\\x1b", // 0x1b
+			"\\x1c", // 0x1c
+			"\\x1d", // 0x1d
+			"\\x1e", // 0x1e
+			"\\x1f", // 0x1f
 			" ", // 0x20
 			"!", // 0x21
 			"\"", // 0x22
