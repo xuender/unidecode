@@ -4,7 +4,7 @@ ASCII transliterations of Unicode text for Java.
 
 ## Links ##
 
-* ![Build Status](https://travis-ci.org/xuender/unidecode.png)
+* [![Build Status](https://travis-ci.org/xuender/unidecode.png)](https://travis-ci.org/xuender/unidecode)
 
 ## Reference ##
 
