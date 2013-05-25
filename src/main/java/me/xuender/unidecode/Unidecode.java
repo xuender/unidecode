@@ -3,7 +3,13 @@
  */
 package me.xuender.unidecode;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
+import java.net.URL;
 
 /**
  * <p>
@@ -52,20 +58,33 @@ public final class Unidecode {
 		return sb.toString().trim();
 	}
 
-	@SuppressWarnings("rawtypes")
 	private static String[] getCache(int section) {
 		String[] ret = cache[section];
 		if (ret == null) {
+			InputStream inStream = null;
 			try {
-				Class c = Class.forName(String.format(
-						"me.xuender.unidecode.X%03x", section));
-				Field f = c.getDeclaredField("data");
-				ret = (String[]) f.get(null);
+				inStream = Unidecode.class.getResourceAsStream(String.format(
+						"/X%03x", section));
+				BufferedReader reader = new BufferedReader(
+						new InputStreamReader(inStream));
+				String line = null;
+				ret = new String[256];
+				int i = 0;
+				while ((line = reader.readLine()) != null) {
+					ret[i] = line;
+					i++;
+				}
 				cache[section] = ret;
-			} catch (ClassNotFoundException e) {
+			} catch (Exception e) {
 				// No match: ignore this character and carry on.
 				cache[section] = new String[] {};
-			} catch (Exception e) {
+			} finally {
+				if (inStream != null) {
+					try {
+						inStream.close();
+					} catch (IOException e) {
+					}
+				}
 			}
 		} else if (ret.length == 0) {
 			return null;
