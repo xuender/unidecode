@@ -3,9 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>me.xuender</groupId>
 	<artifactId>unidecode</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<description>ASCII transliterations of Unicode text for Java</description>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
 	<developers>
 		<developer>
 			<id>ender</id>
@@ -20,9 +25,17 @@
 		<url>https://github.com/xuender/unidecode/issues</url>
 	</issueManagement>
 	<scm>
-		<connection>git@github.com/xuender/unidecode</connection>
-		<url>https://github.com/xuender/unidecode</url>
+		<url>git@github.com:xuender/unidecode.git</url>
+		<connection>scm:git:git@github.com:xuender/unidecode.git</connection>
+		<developerConnection>scm:git:git@github.com:xuender/unidecode.git</developerConnection>
 	</scm>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
