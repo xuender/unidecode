@@ -14,7 +14,7 @@ Edit pom.xml.
 <dependency>
 	<groupId>me.xuender</groupId>
 	<artifactId>unidecode</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.3</version>
 </dependency>
 ```
 
