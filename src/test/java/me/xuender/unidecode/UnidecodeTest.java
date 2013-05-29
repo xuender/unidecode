@@ -31,5 +31,6 @@ public class UnidecodeTest {
 				Unidecode.decode("Hello world."));
 		assertEquals("北京", "Bei Jing", Unidecode.decode("北京"));
 		assertEquals("Κνωσός", "Knosos", Unidecode.decode("Κνωσός"));
+		assertEquals("あみだにょらい", "amidaniyorai", Unidecode.decode("あみだにょらい"));
 	}
 }
