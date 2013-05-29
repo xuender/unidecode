@@ -33,4 +33,18 @@ public class UnidecodeTest {
 		assertEquals("Κνωσός", "Knosos", Unidecode.decode("Κνωσός"));
 		assertEquals("あみだにょらい", "amidaniyorai", Unidecode.decode("あみだにょらい"));
 	}
+
+	/**
+	 * Test method for
+	 * {@link me.xuender.unidecode.Unidecode#initials(java.lang.String)}.
+	 */
+	@Test
+	public void testInitials() {
+		assertEquals("hello world", "HW", Unidecode.initials("Hello world."));
+		assertEquals("北京", "BJ", Unidecode.initials("北京"));
+		assertEquals("Κνωσός", "K", Unidecode.initials("Κνωσός"));
+		assertEquals("あみだにょらい", "A", Unidecode.initials("あみだにょらい"));
+		assertEquals("enter", "BJ\nSSD\n\rTS\tYSGD",
+				Unidecode.initials("北京\n是首都\n\r同时\t也是古都"));
+	}
 }

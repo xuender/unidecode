@@ -7,6 +7,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * <p>
@@ -87,5 +89,22 @@ public final class Unidecode {
 			return null;
 		}
 		return ret;
+	}
+
+	/**
+	 * Transliterate Unicode string to a upper case initials.
+	 * 
+	 * @param str
+	 *            Unicode String to initials.
+	 * @return Upper case initials.
+	 */
+	public static String initials(final String str) {
+		StringBuilder sb = new StringBuilder();
+		Pattern p = Pattern.compile("^\\w|\\s+\\w");
+		Matcher m = p.matcher(decode(str));
+		while (m.find()) {
+			sb.append(m.group().replaceAll(" ", ""));
+		}
+		return sb.toString().toUpperCase();
 	}
 }
