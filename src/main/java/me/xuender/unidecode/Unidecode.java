@@ -34,6 +34,9 @@ public final class Unidecode {
 	 * @return ASCII string.
 	 */
 	public static String decode(final String str) {
+		if (str == null) {
+			return "";
+		}
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < str.length(); i++) {
 			char c = str.charAt(i);
@@ -98,6 +101,9 @@ public final class Unidecode {
 	 * @return String initials.
 	 */
 	public static String initials(final String str) {
+		if (str == null) {
+			return "";
+		}
 		StringBuilder sb = new StringBuilder();
 		Pattern p = Pattern.compile("^\\w|\\s+\\w");
 		Matcher m = p.matcher(decode(str));

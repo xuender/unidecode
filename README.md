@@ -17,15 +17,15 @@ Edit pom.xml.
 ```
 
 ### decode
-    System.out.print(Unidecode.decode("北京"));
-    Bei Jing
+    System.out.print(Unidecode.decode("南无阿弥陀佛"));
+    Nan Wu A Mi Tuo Fo
 
-    System.out.print(Unidecode.decode("Κνωσός"));
-    Knosos
+    System.out.print(Unidecode.decode("あみだにょらい"));
+    amidaniyorai
 
 ### initials
-    System.out.print(Unidecode.initials("北京"));
-    BJ
+    System.out.print(Unidecode.initials("南无阿弥陀佛"));
+    NWAMTF
 
     System.out.print(Unidecode.initials("Κνωσός"));
     K

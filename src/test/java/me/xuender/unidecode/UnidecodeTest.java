@@ -29,9 +29,19 @@ public class UnidecodeTest {
 	public void testDecode() {
 		assertEquals("hello world", "Hello world.",
 				Unidecode.decode("Hello world."));
-		assertEquals("北京", "Bei Jing", Unidecode.decode("北京"));
+		assertEquals("南无阿弥陀佛", "Nan Wu A Mi Tuo Fo", Unidecode.decode("南无阿弥陀佛"));
 		assertEquals("Κνωσός", "Knosos", Unidecode.decode("Κνωσός"));
 		assertEquals("あみだにょらい", "amidaniyorai", Unidecode.decode("あみだにょらい"));
+	}
+
+	/**
+	 * Test method for
+	 * {@link me.xuender.unidecode.Unidecode#decode(java.lang.String)}.
+	 */
+	@Test
+	public void testDecodeException() {
+		assertEquals("", "", Unidecode.decode(""));
+		assertEquals("NULL", "", Unidecode.decode(null));
 	}
 
 	/**
@@ -41,10 +51,20 @@ public class UnidecodeTest {
 	@Test
 	public void testInitials() {
 		assertEquals("hello world", "Hw", Unidecode.initials("Hello world."));
-		assertEquals("北京", "BJ", Unidecode.initials("北京"));
+		assertEquals("南无阿弥陀佛", "NWAMTF", Unidecode.initials("南无阿弥陀佛"));
 		assertEquals("Κνωσός", "K", Unidecode.initials("Κνωσός"));
 		assertEquals("あみだにょらい", "a", Unidecode.initials("あみだにょらい"));
-		assertEquals("enter", "BJ\nSSD\n\rTS\tYSGD",
-				Unidecode.initials("北京\n是首都\n\r同时\t也是古都"));
+		assertEquals("enter", "XXGN\nQZQC\n\rTZHL\tSSC",
+				Unidecode.initials("小小姑娘\n清早起床\n\r提着花篮\t上市场。"));
+	}
+
+	/**
+	 * Test method for
+	 * {@link me.xuender.unidecode.Unidecode#initials(java.lang.String)}.
+	 */
+	@Test
+	public void testInitialsException() {
+		assertEquals("", "", Unidecode.initials(""));
+		assertEquals("NULL", "", Unidecode.initials(null));
 	}
 }
