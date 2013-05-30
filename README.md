@@ -2,8 +2,6 @@
 
 ASCII transliterations of Unicode string for Java.
 
-Transliterate Unicode string to a upper case initials.
-
 ## How to Use ##
 
 Edit pom.xml.
