@@ -15,11 +15,10 @@ import java.util.regex.Pattern;
  * Transliterate Unicode string to a valid 7-bit ASCII String.
  * </p>
  * 
- * Reference python`s <a
- * href="https://pypi.python.org/pypi/Unidecode">Unidecode</a>
- * 
- * @author ender
- * 
+ * @see <a href="https://pypi.python.org/pypi/Unidecode">Python`s Unidecode</a>
+ * @see <a href="https://github.com/xuender/unidecode">Unidecode at
+ *      github.com</a>
+ * @author <a href="mailto:xuender@gmail.com">ender</a>
  */
 public final class Unidecode {
 	/**
@@ -106,5 +105,8 @@ public final class Unidecode {
 			sb.append(m.group().replaceAll(" ", ""));
 		}
 		return sb.toString().toUpperCase();
+	}
+
+	private Unidecode() {
 	}
 }

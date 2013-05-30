@@ -9,7 +9,7 @@ import org.junit.AfterClass;
 import org.junit.Test;
 
 /**
- * @author ender
+ * @author <a href="mailto:xuender@gmail.com">ender</a>
  * 
  */
 public class UnidecodeTest {
