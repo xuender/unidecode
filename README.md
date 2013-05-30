@@ -15,19 +15,21 @@ Edit pom.xml.
 ```
 
 ### decode
-    System.out.print(Unidecode.decode("南无阿弥陀佛"));
-    Nan Wu A Mi Tuo Fo
+```java
+System.out.print(Unidecode.decode("南无阿弥陀佛"));
+Nan Wu A Mi Tuo Fo
 
-    System.out.print(Unidecode.decode("あみだにょらい"));
-    amidaniyorai
-
+System.out.print(Unidecode.decode("あみだにょらい"));
+amidaniyorai
+```
 ### initials
-    System.out.print(Unidecode.initials("南无阿弥陀佛"));
-    NWAMTF
+```java
+System.out.print(Unidecode.initials("南无阿弥陀佛"));
+NWAMTF
 
-    System.out.print(Unidecode.initials("Κνωσός"));
-    K
-
+System.out.print(Unidecode.initials("Κνωσός"));
+K
+```
 ## Links ##
 
 * [![Build Status](https://travis-ci.org/xuender/unidecode.png)](https://travis-ci.org/xuender/unidecode)
