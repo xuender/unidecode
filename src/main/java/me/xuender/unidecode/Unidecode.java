@@ -91,11 +91,11 @@ public final class Unidecode {
 	}
 
 	/**
-	 * Transliterate Unicode string to a upper case initials.
+	 * Transliterate Unicode string to a initials.
 	 * 
 	 * @param str
 	 *            Unicode String to initials.
-	 * @return Upper case initials.
+	 * @return String initials.
 	 */
 	public static String initials(final String str) {
 		StringBuilder sb = new StringBuilder();
@@ -104,7 +104,7 @@ public final class Unidecode {
 		while (m.find()) {
 			sb.append(m.group().replaceAll(" ", ""));
 		}
-		return sb.toString().toUpperCase();
+		return sb.toString();
 	}
 
 	private Unidecode() {
