@@ -35,19 +35,6 @@ public class UnidecodeTest {
 	}
 
 	/**
-	 * 2013-09-06 17:57
-	 * 
-	 * 你好，最近在项目中使用Unidecode，把用户名转拼音后的声母取出来，发现在转换“一”这个字的时候结果有问题 String pinyin =
-	 * Unidecode.decode("一条会走路的鱼"); System.out.print(pinyin.charAt(0)); 输出结果为：[
-	 * 怎么办？
-	 */
-	@Test
-	public void testDecodeYi() {
-		assertEquals("何清宝提出的bug", "Yi Tiao Hui Zou Lu De Yu",
-				Unidecode.decode("一条会走路的鱼"));
-	}
-
-	/**
 	 * Test method for
 	 * {@link me.xuender.unidecode.Unidecode#decode(java.lang.String)}.
 	 */
@@ -79,5 +66,32 @@ public class UnidecodeTest {
 	public void testInitialsException() {
 		assertEquals("", "", Unidecode.initials(""));
 		assertEquals("NULL", "", Unidecode.initials(null));
+	}
+
+	/**
+	 * 2013-09-06 17:57
+	 * 
+	 * 你好，最近在项目中使用Unidecode，把用户名转拼音后的声母取出来，发现在转换“一”这个字的时候结果有问题 String pinyin =
+	 * Unidecode.decode("一条会走路的鱼"); System.out.print(pinyin.charAt(0)); 输出结果为：[
+	 * 怎么办？
+	 */
+	@Test
+	public void testDecodeYi() {
+		assertEquals("何清宝提出的bug", "Yi Tiao Hui Zou Lu De Yu",
+				Unidecode.decode("一条会走路的鱼"));
+	}
+
+	/**
+	 * 检查全部汉字是否还有[开头的情况
+	 */
+	@Test
+	public void testAll() {
+		int a = (int) (4 * Math.pow(16, 3) + 14 * Math.pow(16, 2)); // 汉字ASCII码最小值
+		int b = (int) (9 * Math.pow(16, 3) + 15 * Math.pow(16, 2) + 10 * Math
+				.pow(16, 1)) + 5; // 汉字ASCII码最大值
+		for (int i = a; i <= b; i++) {
+			assertNotEquals("不是[开头", "[", Unidecode.decode((char) i + "")
+					.charAt(0));
+		}
 	}
 }
