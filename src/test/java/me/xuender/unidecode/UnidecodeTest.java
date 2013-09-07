@@ -35,6 +35,19 @@ public class UnidecodeTest {
 	}
 
 	/**
+	 * 2013-09-06 17:57
+	 * 
+	 * 你好，最近在项目中使用Unidecode，把用户名转拼音后的声母取出来，发现在转换“一”这个字的时候结果有问题 String pinyin =
+	 * Unidecode.decode("一条会走路的鱼"); System.out.print(pinyin.charAt(0)); 输出结果为：[
+	 * 怎么办？
+	 */
+	@Test
+	public void testDecodeYi() {
+		assertEquals("何清宝提出的bug", "Yi Tiao Hui Zou Lu De Yu",
+				Unidecode.decode("一条会走路的鱼"));
+	}
+
+	/**
 	 * Test method for
 	 * {@link me.xuender.unidecode.Unidecode#decode(java.lang.String)}.
 	 */
