@@ -19,6 +19,9 @@ Edit pom.xml.
 System.out.print(Unidecode.decode("南无阿弥陀佛"));
 Nan Wu A Mi Tuo Fo
 
+System.out.print(Unidecode.decode("一条会走路的鱼"));
+Yi Tiao Hui Zou Lu De Yu
+
 System.out.print(Unidecode.decode("あみだにょらい"));
 amidaniyorai
 ```
