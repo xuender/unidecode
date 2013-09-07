@@ -10,7 +10,7 @@ Edit pom.xml.
 <dependency>
 	<groupId>me.xuender</groupId>
 	<artifactId>unidecode</artifactId>
-	<version>0.0.4</version>
+	<version>0.0.5</version>
 </dependency>
 ```
 
