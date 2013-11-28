@@ -94,4 +94,31 @@ public class UnidecodeTest {
 					.charAt(0));
 		}
 	}
+
+	/**
+	 * ArrayIndexOutOfBound exception
+	 * 
+	 * Schweigi opened this issue
+	 * 
+	 * If decode() is used with e.g. an emoticon character there is a
+	 * ArrayIndexOutOfBound exception thrown.
+	 * 
+	 * Example text: http://www.scarfboy.com/coding/unicode-tool?s=U%2b1F61C
+	 * 
+	 * String[] ret = cache[section]; (Line: 63)
+	 * 
+	 * The reason is that on Line 52 int section = codepoint >> 8; the section
+	 * will be bigger than 255 and therefore out of the cache area.
+	 * 
+	 * In my opinion there are two solution:
+	 * 
+	 * Either the cache is made bigger to contain all value up to 0xEFFFF or
+	 * Characters with a value bigger (> 0xFFFF) than the cache should not be
+	 * cached.
+	 */
+	@Test
+	public void testIssues2() {
+		assertEquals("", Unidecode.decode("😜"));
+		assertEquals("H", Unidecode.decode("Ｈ"));
+	}
 }
