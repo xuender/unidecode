@@ -47,7 +47,7 @@ public final class Unidecode {
 				continue;
 			}
 			// Characters in Private Use Area and above are ignored
-			if (codepoint > 0xeffff)
+			if (codepoint > 0xffff)
 				continue;
 			int section = codepoint >> 8; // Chop off the last two hex digits
 			int position = codepoint % 256; // Last two hex digits
