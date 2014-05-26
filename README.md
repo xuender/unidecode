@@ -1,4 +1,7 @@
 # Unidecode #
+[![Build Status](https://travis-ci.org/xuender/unidecode.png)](https://travis-ci.org/xuender/unidecode)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/me.xuender/unidecode/badge.svg)](https://maven-badges.herokuapp.com/maven-central/me.xuender/unidecode)
+
 
 ASCII transliterations of Unicode string for Java.
 
@@ -36,9 +39,6 @@ BYRJSCFDDDG
 System.out.print(Unidecode.initials("Κνωσός"));
 K
 ```
-## Links ##
-
-* [![Build Status](https://travis-ci.org/xuender/unidecode.png)](https://travis-ci.org/xuender/unidecode)
 
 ## Reference ##
 
