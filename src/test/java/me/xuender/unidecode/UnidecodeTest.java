@@ -121,4 +121,20 @@ public class UnidecodeTest {
 		assertEquals("", Unidecode.decode("😜"));
 		assertEquals("H", Unidecode.decode("Ｈ"));
 	}
+    /**
+     * 修改万的拼音翻译错误的问题 万的拼音是wan，不是mo
+     */
+    @Test
+    public void testWan(){
+        assertEquals("W", Unidecode.initials("万"));
+        assertEquals("Wan", Unidecode.decode("万"));
+    }
+    /**
+     * 添加\u4e06 丆的读音，参考unicode.org的资料
+     */
+    @Test
+    public void testHan(){
+        assertEquals("H", Unidecode.initials("丆"));
+        assertEquals("Han", Unidecode.decode("丆"));
+    }
 }
