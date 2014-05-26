@@ -10,7 +10,7 @@ Edit pom.xml.
 <dependency>
 	<groupId>me.xuender</groupId>
 	<artifactId>unidecode</artifactId>
-	<version>0.0.6</version>
+	<version>0.0.7</version>
 </dependency>
 ```
 
@@ -29,6 +29,9 @@ amidaniyorai
 ```java
 System.out.print(Unidecode.initials("南无阿弥陀佛"));
 NWAMTF
+
+System.out.println(Unidecode.initials("不怨人就是成佛的大道根"));
+BYRJSCFDDDG
 
 System.out.print(Unidecode.initials("Κνωσός"));
 K

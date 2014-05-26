@@ -137,4 +137,16 @@ public class UnidecodeTest {
         assertEquals("H", Unidecode.initials("丆"));
         assertEquals("Han", Unidecode.decode("丆"));
     }
+
+    /**
+     * Translate ≠ to !=, ≥ to >=, ≤ to <=
+     */
+    public void testUnequal(){
+        assertEquals("!=", Unidecode.decode("≠"));
+        assertEquals(">=", Unidecode.decode("≥"));
+        assertEquals("<=", Unidecode.decode("≤"));
+        assertEquals("!=", Unidecode.initials("≠"));
+        assertEquals(">=", Unidecode.initials("≥"));
+        assertEquals("<=", Unidecode.initials("≤"));
+    }
 }

@@ -65,7 +65,7 @@ public final class Unidecode {
 			InputStream inStream = null;
 			try {
 				inStream = Unidecode.class.getResourceAsStream(String.format(
-						"/data/X%03x", section));
+						"/me/xuender/unidecode/ascii/X%03x", section));
 				BufferedReader reader = new BufferedReader(
 						new InputStreamReader(inStream));
 				String line = null;
