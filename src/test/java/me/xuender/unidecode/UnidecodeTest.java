@@ -193,6 +193,14 @@ public class UnidecodeTest {
     }
 
     /**
+     * 修正 厂 的读音，是 chang不是 han
+     */
+    @Test
+    public void testChang(){
+        assertEquals("C", Unidecode.initials("厂"));
+        assertEquals("Chang", Unidecode.decode("厂"));
+    }
+    /**
      * 添加\u4ee9 仩的读音
      */
     @Test
