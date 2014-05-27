@@ -139,6 +139,69 @@ public class UnidecodeTest {
     }
 
     /**
+     *添加\u4e4a 乊的读音
+     */
+    @Test
+    public void testYi(){
+        assertEquals("Y", Unidecode.initials("乊"));
+        assertEquals("Yi", Unidecode.decode("乊"));
+    }
+
+    /**
+     * 添加\u4e5b 乛的读音
+     */
+    @Test
+    public void testYa(){
+        assertEquals("Y", Unidecode.initials("乛"));
+        assertEquals("Ya", Unidecode.decode("乛"));
+    }
+
+    /**
+     * 添加\u4e65 乥的读音
+     */
+    @Test
+    public void testHu(){
+        assertEquals("H", Unidecode.initials("乥"));
+        assertEquals("Hu", Unidecode.decode("乥"));
+    }
+
+    /**
+     * 添加\u4e6e 乮的读音
+     */
+    @Test
+    public void testMao(){
+        assertEquals("M", Unidecode.initials("乮"));
+        assertEquals("Mao", Unidecode.decode("乮"));
+    }
+
+    /**
+     * 添加\u4e7d 乽的读音
+     */
+    @Test
+    public void testZhe(){
+        assertEquals("Z", Unidecode.initials("乽"));
+        assertEquals("Zhe", Unidecode.decode("乽"));
+    }
+
+    /**
+     * 添加\u4eaa 亪的读音
+     */
+    @Test
+    public void testYe(){
+        assertEquals("Y", Unidecode.initials("亪"));
+        assertEquals("Ye", Unidecode.decode("亪"));
+    }
+
+    /**
+     * 添加\u4ee9 仩的读音
+     */
+    @Test
+    public void testShang(){
+        assertEquals("S", Unidecode.initials("仩"));
+        assertEquals("Shang", Unidecode.decode("仩"));
+    }
+
+    /**
      * Translate ≠ to !=, ≥ to >=, ≤ to <=
      */
     public void testUnequal(){
