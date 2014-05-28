@@ -43,3 +43,7 @@ K
 ## Reference ##
 
 [Unidecode for Python](https://pypi.python.org/pypi/Unidecode)
+
+## Thanks ##
+* 魏敬宁([cratylus](https://github.com/cratylus))
+* Marco Schweighauser([Schweigi](https://github.com/Schweigi))
