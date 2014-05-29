@@ -178,4 +178,94 @@ public class CratylusTest {
         assertEquals("N", Unidecode.initials("宁"));
         assertEquals("Ning", Unidecode.decode("宁"));
     }
+
+    /**
+     * 修正 朴 的读音，是 pu 不是 po
+     */
+    @Test
+    public void testPu2() {
+        assertEquals("P", Unidecode.initials("朴"));
+        assertEquals("Pu", Unidecode.decode("朴"));
+    }
+
+    /**
+     * 修正 价 的读音，是 jia 不是 jie
+     */
+    @Test
+    public void testJia() {
+        assertEquals("J", Unidecode.initials("价"));
+        assertEquals("Jia", Unidecode.decode("价"));
+    }
+
+    /**
+     * 修正 坏 的读音，是 huai 不是 pi
+     */
+    @Test
+    public void testHuai() {
+        assertEquals("H", Unidecode.initials("坏"));
+        assertEquals("Huai", Unidecode.decode("坏"));
+    }
+
+    /**
+     * 修正 盯 的读音，是 ding 不是 cheng
+     */
+    @Test
+    public void testDing() {
+        assertEquals("D", Unidecode.initials("盯"));
+        assertEquals("Ding", Unidecode.decode("盯"));
+    }
+
+    /**
+     * 修正 呆 的读音，是 dai 不是 ai
+     */
+    @Test
+    public void testDai() {
+        assertEquals("D", Unidecode.initials("呆"));
+        assertEquals("Dai", Unidecode.decode("呆"));
+    }
+
+    /**
+     * 修正 柜 的读音，是 gui 不是 ju
+     */
+    @Test
+    public void testGui() {
+        assertEquals("G", Unidecode.initials("柜"));
+        assertEquals("Gui", Unidecode.decode("柜"));
+    }
+
+    /**
+     * 修正 茧 的读音，是 jian 不是 chong
+     */
+    @Test
+    public void testJian() {
+        assertEquals("J", Unidecode.initials("茧"));
+        assertEquals("Jian", Unidecode.decode("茧"));
+    }
+
+    /**
+     * 修正 柏 的读音，是 bai 不是 bo
+     */
+    @Test
+    public void testBai() {
+        assertEquals("B", Unidecode.initials("柏"));
+        assertEquals("Bai", Unidecode.decode("柏"));
+    }
+
+    /**
+     * 修正 冒 的读音，是 mao 不是 mou
+     */
+    @Test
+    public void testMao2() {
+        assertEquals("M", Unidecode.initials("冒"));
+        assertEquals("Mao", Unidecode.decode("冒"));
+    }
+
+    /**
+     * 修正 适 的读音，是 shi 不是 gua
+     */
+    @Test
+    public void testShi() {
+        assertEquals("S", Unidecode.initials("适"));
+        assertEquals("Shi", Unidecode.decode("适"));
+    }
 }
