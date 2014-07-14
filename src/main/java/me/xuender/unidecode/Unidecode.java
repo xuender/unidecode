@@ -1,12 +1,9 @@
 /**
- * 
+ *
  */
 package me.xuender.unidecode;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,11 +11,11 @@ import java.util.regex.Pattern;
  * <p>
  * Transliterate Unicode string to a valid 7-bit ASCII String.
  * </p>
- * 
+ *
+ * @author <a href="mailto:xuender@gmail.com">ender</a>
  * @see <a href="https://pypi.python.org/pypi/Unidecode">Python`s Unidecode</a>
  * @see <a href="https://github.com/xuender/unidecode">Unidecode at
- *      github.com</a>
- * @author <a href="mailto:xuender@gmail.com">ender</a>
+ * github.com</a>
  */
 public final class Unidecode {
 	/**
@@ -28,9 +25,8 @@ public final class Unidecode {
 
 	/**
 	 * Transliterate an Unicode object into an ASCII string.
-	 * 
-	 * @param str
-	 *            Unicode String to transliterate.
+	 *
+	 * @param str Unicode String to transliterate.
 	 * @return ASCII string.
 	 */
 	public static String decode(final String str) {
@@ -59,6 +55,18 @@ public final class Unidecode {
 		return sb.toString().trim();
 	}
 
+	/**
+	 * Transliterate an Unicode object into an ASCII string.
+	 *
+	 * @param str         Unicode String to transliterate.
+	 * @param charsetName charset Name
+	 * @return ASCII string.
+	 * @throws UnsupportedEncodingException
+	 */
+	public static String decode(final String str, final String charsetName) throws UnsupportedEncodingException {
+		return decode(new String(str.getBytes(charsetName), "UTF-8"));
+	}
+
 	private static String[] getCache(int section) {
 		String[] ret = cache[section];
 		if (ret == null) {
@@ -78,7 +86,7 @@ public final class Unidecode {
 				cache[section] = ret;
 			} catch (Exception e) {
 				// No match: ignore this character and carry on.
-				cache[section] = new String[] {};
+				cache[section] = new String[]{};
 			} finally {
 				if (inStream != null) {
 					try {
@@ -95,9 +103,8 @@ public final class Unidecode {
 
 	/**
 	 * Transliterate Unicode string to a initials.
-	 * 
-	 * @param str
-	 *            Unicode String to initials.
+	 *
+	 * @param str Unicode String to initials.
 	 * @return String initials.
 	 */
 	public static String initials(final String str) {
@@ -111,6 +118,18 @@ public final class Unidecode {
 			sb.append(m.group().replaceAll(" ", ""));
 		}
 		return sb.toString();
+	}
+
+	/**
+	 * Transliterate Unicode string to a initials.
+	 *
+	 * @param str         Unicode String to initials.
+	 * @param charsetName charset Name
+	 * @return String initials.
+	 * @throws UnsupportedEncodingException
+	 */
+	public static String initials(final String str, final String charsetName) throws UnsupportedEncodingException {
+		return initials(new String(str.getBytes(charsetName), "UTF-8"));
 	}
 
 	private Unidecode() {

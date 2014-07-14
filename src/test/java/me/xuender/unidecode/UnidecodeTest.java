@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package me.xuender.unidecode;
 
@@ -8,9 +8,10 @@ import static org.junit.Assert.*;
 import org.junit.AfterClass;
 import org.junit.Test;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * @author <a href="mailto:xuender@gmail.com">ender</a>
- * 
  */
 public class UnidecodeTest {
 
@@ -70,7 +71,7 @@ public class UnidecodeTest {
 
 	/**
 	 * 2013-09-06 17:57
-	 * 
+	 * <p/>
 	 * 你好，最近在项目中使用Unidecode，把用户名转拼音后的声母取出来，发现在转换“一”这个字的时候结果有问题 String pinyin =
 	 * Unidecode.decode("一条会走路的鱼"); System.out.print(pinyin.charAt(0)); 输出结果为：[
 	 * 怎么办？
@@ -97,21 +98,21 @@ public class UnidecodeTest {
 
 	/**
 	 * ArrayIndexOutOfBound exception
-	 * 
+	 * <p/>
 	 * Schweigi opened this issue
-	 * 
+	 * <p/>
 	 * If decode() is used with e.g. an emoticon character there is a
 	 * ArrayIndexOutOfBound exception thrown.
-	 * 
+	 * <p/>
 	 * Example text: http://www.scarfboy.com/coding/unicode-tool?s=U%2b1F61C
-	 * 
+	 * <p/>
 	 * String[] ret = cache[section]; (Line: 63)
-	 * 
+	 * <p/>
 	 * The reason is that on Line 52 int section = codepoint >> 8; the section
 	 * will be bigger than 255 and therefore out of the cache area.
-	 * 
+	 * <p/>
 	 * In my opinion there are two solution:
-	 * 
+	 * <p/>
 	 * Either the cache is made bigger to contain all value up to 0xEFFFF or
 	 * Characters with a value bigger (> 0xFFFF) than the cache should not be
 	 * cached.
@@ -121,15 +122,19 @@ public class UnidecodeTest {
 		assertEquals("", Unidecode.decode("😜"));
 		assertEquals("H", Unidecode.decode("Ｈ"));
 	}
-   /**
-     * Translate ≠ to !=, ≥ to >=, ≤ to <=
-     */
-    public void testUnequal(){
-        assertEquals("!=", Unidecode.decode("≠"));
-        assertEquals(">=", Unidecode.decode("≥"));
-        assertEquals("<=", Unidecode.decode("≤"));
-        assertEquals("!=", Unidecode.initials("≠"));
-        assertEquals(">=", Unidecode.initials("≥"));
-        assertEquals("<=", Unidecode.initials("≤"));
-    }
+
+	/**
+	 * Translate ≠ to !=, ≥ to >=, ≤ to <=
+	 */
+	@Test
+	public void testUnequal() {
+		assertEquals("!=", Unidecode.decode("≠"));
+		assertEquals(">=", Unidecode.decode("≥"));
+		assertEquals("<=", Unidecode.decode("≤"));
+	}
+
+	@Test
+	public void testCharsetName() throws UnsupportedEncodingException {
+		assertEquals("Zhong Guo", Unidecode.decode(new String("中国".getBytes("UTF-8"), "GBK"), "GBK"));
+	}
 }
